@@ -57,20 +57,52 @@ namespace API.Controllers
 		}
 
 		// API để thêm hợp đồng mới
-		[HttpPost]
-        public async Task<IActionResult> AddHopDong([FromBody] Viewmodel product)
-        {
-            if (product == null)
-            {
-                return BadRequest("Dữ liệu không hợp lệ.");
-            }
+		[HttpGet("addhopdong")]
+		public async Task<IActionResult> HandleResponse1(int response, string noi_dung,string Hopdongid ,string bena,string gmaila,string tenb,string gmailb, DateTime ngaythaydoi)
+		{
+			try
+			{
 
-            await _hopDongServices.AddAsync(product);
-            return Ok("1");
-        }
+				// Xử lý phản hồi
+				if (response == 1)
+				{
+					try
+					{
+						Hopdong hd = new Hopdong();
+						hd.Hopdongid = Hopdongid;
+						hd.HoTenA = bena;
+						hd.HoTenB = tenb;
+						hd.Gmailb = gmailb;
+						hd.Gmaila = gmaila;
+						hd.Noidung = noi_dung;
+						hd.NgayThayDoi = ngaythaydoi;
+						await db.AddAsync(hd);
+						await db.SaveChangesAsync();
+						// Gọi dịch vụ hoặc thêm học sinh vào cơ sở dữ liệu
+						//_studentService.AddStudent(studentId);
+						return Ok("Hợp đồng đã được khởi tạo thành công");
+					}
+					catch (Exception)
+					{
 
-        // API để cập nhật hợp đồng
-        [HttpPut("{id}")]
+						return BadRequest("Hợp đồng đã được khởi tạo thất bại!");
+					}
+
+				}
+				else
+				{
+					// Không làm gì nếu phản hồi là "no"
+					return Ok("Hợp đồng không được thêm.");
+				}
+			}
+			catch (Exception ex)
+			{
+				return StatusCode(500, "An error occurred while processing the response.");
+			}
+		}
+
+		// API để cập nhật hợp đồng
+		[HttpPut("{id}")]
         public async Task<IActionResult> UpdateHopDong(int id, [FromBody] Hopdong product)
         {
             

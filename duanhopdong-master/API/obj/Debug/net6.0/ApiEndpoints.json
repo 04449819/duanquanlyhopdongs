@@ -11,22 +11,6 @@
   },
   {
     "ContainingType": "API.Controllers.HopdongController",
-    "Method": "AddHopDong",
-    "RelativePath": "api/Hopdong",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "product",
-        "Type": "DBcontext.Viewmodel.Viewmodel",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "API.Controllers.HopdongController",
     "Method": "GetHopDongById",
     "RelativePath": "api/Hopdong/{id}",
     "HttpMethod": "GET",
@@ -74,6 +58,57 @@
         "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Controllers.HopdongController",
+    "Method": "HandleResponse1",
+    "RelativePath": "api/Hopdong/addhopdong",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "response",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "noi_dung",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "Hopdongid",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bena",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "gmaila",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "tenb",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "gmailb",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ngaythaydoi",
+        "Type": "System.DateTime",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -161,6 +196,57 @@
       },
       {
         "Name": "noidung",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ngaythaydoi",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Controllers.MailController",
+    "Method": "SendStudentConfirmationEmailAsync",
+    "RelativePath": "api/Mail/send-student-confirmation1",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "hopdongid",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "noidung",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "bena",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "gmaila",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "benb",
         "Type": "System.String",
         "IsRequired": false
       },

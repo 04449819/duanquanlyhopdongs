@@ -53,7 +53,7 @@ namespace API.Controllers
 				else
 				{
 					// Không làm gì nếu phản hồi là "no"
-					return Ok("Học sinh không được thêm.");
+					return Ok("Hợp đồng không được sửa.");
 				}
 			}
 			catch (Exception ex)
@@ -91,6 +91,58 @@ namespace API.Controllers
 				};
 
 				var result = await _mailServices.SendMail(mailData);
+
+				if (result)
+				{
+					_logger.LogInformation($"Email sent successfully for student ID: {id}");
+					return Ok(1);
+				}
+				else
+				{
+					_logger.LogError($"Failed to send email for student ID: {id}");
+					return StatusCode(500, "Failed to send email.");
+				}
+			}
+			catch (Exception ex)
+			{
+				_logger.LogError($"An error occurred while sending email for student ID: {id}. Error: {ex.Message}");
+				return StatusCode(500, "An error occurred.");
+			}
+		}
+
+
+		[HttpPost("send-student-confirmation1")]
+		public async Task<IActionResult> SendStudentConfirmationEmailAsync(int id, string hopdongid, string noidung,string bena,string gmaila,string benb, string email, DateTime ngaythaydoi)
+		{
+			try
+			{
+				_logger.LogInformation($"Preparing email for student: {hopdongid}, ID: {id}");
+
+				var mailData = new MailData1
+				{
+					id = id,
+					noi_dung = noidung,
+					HoTenA = bena,
+					HoTenB = benb,
+					Gmaila = gmaila,
+					Gmailb = email,
+					EmailToId = email,
+					EmailToName = hopdongid,
+					hopdongid = hopdongid,
+					EmailSubject = "Xác nhận thêm học sinh",
+					EmailBody = $@"
+                <p>Xin chào,</p>
+                <p>Bạn có muốn sửa hợp đồng sau đây vào hệ thống không?</p>
+                <ul>
+                    <li><b>Tên:</b> {hopdongid}</li>
+                    <li><b>ID:</b> {id}</li>
+                   <li><b>Thoi gian:</b> {ngaythaydoi}</li>
+                </ul>
+                <p>Hãy chọn một trong hai tùy chọn bên dưới:</p>
+            "
+				};
+
+				var result = await _mailServices.SendMail1(mailData);
 
 				if (result)
 				{

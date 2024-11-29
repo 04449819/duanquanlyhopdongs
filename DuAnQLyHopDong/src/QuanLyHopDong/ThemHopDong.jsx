@@ -66,7 +66,7 @@ const ThemHopDong = () => {
     const data = {
       hopdongid: contract?.name,
       id: contract?.id,
-      dateCreated: contract?.dateCreated,
+      dateCreated: new Date().toISOString(),
       noidung: contract?.message,
       addressCreator: publicKey?.toBase58(),
       gmaila: contract?.partyA?.email,
@@ -74,10 +74,12 @@ const ThemHopDong = () => {
       gmailb: contract?.partyB?.email,
       hoTenB: contract?.partyB?.name,
     };
-
+    console.log(data.noidung);
+    console.log(
+      `https://localhost:7233/api/Mail/send-student-confirmation1?id=1&hopdongid=${data.hopdongid}&noidung=${data.noidung}&bena=${data.hoTenA}&gmaila=${data.gmaila}&benb=${data.hoTenA}&email=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
+    );
     const hopdongResponse = await axios.post(
-      "https://localhost:7233/api/Hopdong",
-      data
+      `https://localhost:7233/api/Mail/send-student-confirmation1?id=1&hopdongid=${data.hopdongid}&noidung=${data.noidung}&bena=${data.hoTenA}&gmaila=${data.gmaila}&benb=${data.hoTenB}&email=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
     );
     console.log("Hopdong API response:", hopdongResponse.data);
     if (hopdongResponse.data === 1) {
