@@ -112,16 +112,67 @@
   },
   {
     "ContainingType": "API.Controllers.MailController",
-    "Method": "SendEmail",
-    "RelativePath": "api/Mail/send",
+    "Method": "HandleResponse",
+    "RelativePath": "api/Mail/response/confirm",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "response",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "noi_dung",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ngaythaydoi",
+        "Type": "System.DateTime",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Controllers.MailController",
+    "Method": "SendStudentConfirmationEmailAsync",
+    "RelativePath": "api/Mail/send-student-confirmation",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "mailData",
-        "Type": "DBcontext.Viewmodel.MailData",
-        "IsRequired": true
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "hopdongid",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "noidung",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "ngaythaydoi",
+        "Type": "System.DateTime",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []

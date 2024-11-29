@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanhopdong-master\\DBcontext\\DBcontext.csproj": {}
+    "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\DBcontext.csproj": {}
   },
   "projects": {
-    "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanhopdong-master\\DBcontext\\DBcontext.csproj": {
+    "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\DBcontext.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanhopdong-master\\DBcontext\\DBcontext.csproj",
+        "projectUniqueName": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\DBcontext.csproj",
         "projectName": "DBcontext",
-        "projectPath": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanhopdong-master\\DBcontext\\DBcontext.csproj",
+        "projectPath": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\DBcontext.csproj",
         "packagesPath": "C:\\Users\\This PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanhopdong-master\\DBcontext\\obj\\",
+        "outputPath": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\This PC\\AppData\\Roaming\\NuGet\\NuGet.Config",

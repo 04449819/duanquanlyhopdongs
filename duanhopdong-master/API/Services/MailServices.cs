@@ -25,8 +25,21 @@ public class MailServices : IMailServices
 				emailMessage.Bcc.Add(new MailboxAddress("Bcc Receiver", "bcc@example.com"));
 				emailMessage.Subject = mailData.EmailSubject;
 				BodyBuilder emailBodyBuilder = new BodyBuilder();
-				emailBodyBuilder.TextBody = mailData.EmailBody;
+
+				// Tạo nội dung email với nút xác nhận "Có" và "Không"
+				string confirmLinkYes = $"https://localhost:7233/api/Mail/response/confirm?response={1}&id={mailData.id}&noi_dung={mailData.noi_dung}&ngaythaydoi={DateTime.Now}";
+				string confirmLinkNo = $"https://localhost:7233/api/Mail/response/confirm?response={2}&id={mailData.id}&noi_dung={mailData.noi_dung}&ngaythaydoi={DateTime.Now}";
+				string emailBody = $@"
+                <p>{mailData.EmailBody}</p>
+                <p>
+                    <a href='{confirmLinkYes}' style='background-color: green; color: white; padding: 10px 20px; text-decoration: none;'>Có</a>
+                    <a href='{confirmLinkNo}' style='background-color: red; color: white; padding: 10px 20px; text-decoration: none;'>Không</a>
+                </p>
+            ";
+
+				emailBodyBuilder.HtmlBody = emailBody;
 				emailMessage.Body = emailBodyBuilder.ToMessageBody();
+
 				using (SmtpClient mailClient = new SmtpClient())
 				{
 					await mailClient.ConnectAsync(_mailSettings.Server, _mailSettings.Port, MailKit.Security.SecureSocketOptions.StartTls);
@@ -39,7 +52,9 @@ public class MailServices : IMailServices
 		}
 		catch (Exception ex)
 		{
+			// Log exception if needed
 			return false;
 		}
 	}
+
 }

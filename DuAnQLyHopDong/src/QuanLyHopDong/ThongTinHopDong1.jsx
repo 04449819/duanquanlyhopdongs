@@ -58,28 +58,12 @@ const ThongTinHopDong1 = () => {
         gmailb: contract.gmailb,
         id: contract.id,
       };
-
-      const updatedContract1 = {
-        EmailToId: hopdong.gmailb,
-        EmailToName: "Update",
-        EmailSubject: `Update ${hopdong.hopdongid}`,
-        EmailBody: `Hợp đồng có mã ${
-          hopdong.hopdongid
-        } đã được chỉnh sửa vào ${new Date()}`,
-      };
-
-      const response = await axios.put(
-        `https://localhost:7233/api/Hopdong/${hopdong1.id}`, // Gửi yêu cầu PUT với ID hợp đồng
-        updatedContract
-      );
-
       const response1 = await axios.post(
-        `https://localhost:7233/api/Mail/send`, // Gửi yêu cầu PUT với ID hợp đồng
-        updatedContract1
+        `https://localhost:7233/api/Mail/send-student-confirmation?id=${updatedContract.id}&hopdongid=${updatedContract.hopdongid}&noidung=${updatedContract.noidung}&email=${updatedContract.gmailb}&ngaythaydoi=${updatedContract.ngayThayDoi}` // Gửi yêu cầu PUT với ID hợp đồng
       );
 
-      console.log(response.data);
-      if (response.data === 1 && response1.data === 1) {
+      console.log(response1.data);
+      if (response1.data === 1) {
         ToastProvider("success", "Contract updated successfully.");
         setTimeout(() => {
           navigate("/danhsachhopdong");
