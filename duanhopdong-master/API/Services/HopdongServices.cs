@@ -43,6 +43,10 @@ namespace API.Services
             }
         }
 
+        public async Task<bool> ExistsByIdAsync(string id)
+        {
+            return await _context.Hopdongs.AnyAsync(h => h.Hopdongid == id);
+        }
         // Lấy tất cả hợp đồng
         public async Task<IEnumerable<Hopdong>> GetAllAsync()
         {

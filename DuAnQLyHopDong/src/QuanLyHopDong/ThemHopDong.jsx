@@ -14,6 +14,9 @@ const ThemHopDong = () => {
   const { connected, publicKey, signTransaction } = useWallet();
   const navigate = useNavigate();
   const currentDate = new Date();
+  const [isContractIdVisible, setIsContractIdVisible] = useState(false);
+
+
   const [contract, setContract] = useState({
     name: "",
     id: "",
@@ -21,6 +24,16 @@ const ThemHopDong = () => {
     message: "",
     partyA: { name: "", email: "" },
     partyB: { name: "", email: "" },
+  });
+
+  const [errors, setErrors] = useState({
+    name: "",
+    id: "",
+    message: "",
+    partyAName: "",
+    partyAEmail: "",
+    partyBName: "",
+    partyBEmail: "",
   });
 
   useEffect(() => {
@@ -55,14 +68,78 @@ const ThemHopDong = () => {
   const handleBack = () => {
     navigate("/danhsachhopdong");
   };
+  const checkContractNameExists = async (contractName) => {
+    try {
+      const response = await axios.get(`https://localhost:7233/api/Hopdong/check-id?id=${contractName}`);
+      return response.data;  // Return boolean value (true if exists, false otherwise)
+    } catch (error) {
+      console.error("Error checking contract name:", error);
+      return false;
+    }
+  };
+
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = {};
+
+    if (!contract.name) {
+      newErrors.name = "Mã hợp đồng là bắt buộc.";
+      valid = false;
+    }
+
+    if (!contract.message) {
+      newErrors.message = "Nội dung hợp đồng là bắt buộc.";
+      valid = false;
+    }
+    if (!contract.partyA.name) {
+      newErrors.partyAName = "Tên bên A là bắt buộc.";
+      valid = false;
+    }
+    if (!contract.partyA.email) {
+      newErrors.partyAEmail = "Email bên A là bắt buộc.";
+      valid = false;
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(contract.partyA.email)) {
+      newErrors.partyAEmail = "Email bên A không hợp lệ.";
+      valid = false;
+    }
+    if (!contract.partyB.name) {
+      newErrors.partyBName = "Tên bên B là bắt buộc.";
+      valid = false;
+    }
+    if (!contract.partyB.email) {
+      newErrors.partyBEmail = "Email bên B là bắt buộc.";
+      valid = false;
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(contract.partyB.email)) {
+      newErrors.partyBEmail = "Email bên B không hợp lệ.";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+    const contractName = contract?.name;  // Use contract name here
+    const idExists = await checkContractNameExists(contractName); // Check for contract name
+
+    if (idExists) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        id: "Mã hợp đồng đã tồn tại trong cơ sở dữ liệu." // Error message for duplicate name
+      }));
+      return;
+    }
 
     if (!publicKey) {
       console.warn("Public key is missing. Please connect your wallet.");
       return;
     }
+
     const data = {
       hopdongid: contract?.name,
       id: contract?.id,
@@ -74,20 +151,27 @@ const ThemHopDong = () => {
       gmailb: contract?.partyB?.email,
       hoTenB: contract?.partyB?.name,
     };
+
     console.log(data.noidung);
     console.log(
       `https://localhost:7233/api/Mail/send-student-confirmation1?id=1&hopdongid=${data.hopdongid}&noidung=${data.noidung}&bena=${data.hoTenA}&gmaila=${data.gmaila}&benb=${data.hoTenA}&email=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
     );
-    const hopdongResponse = await axios.post(
-      `https://localhost:7233/api/Mail/send-student-confirmation1?id=1&hopdongid=${data.hopdongid}&noidung=${data.noidung}&bena=${data.hoTenA}&gmaila=${data.gmaila}&benb=${data.hoTenB}&email=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
-    );
-    console.log("Hopdong API response:", hopdongResponse.data);
-    if (hopdongResponse.data === 1) {
-      ToastProvider("success", "Contract add successfully.");
+
+    try {
+      const hopdongResponse = await axios.post(
+        `https://localhost:7233/api/Mail/send-student-confirmation1?id=1&hopdongid=${data.hopdongid}&noidung=${data.noidung}&bena=${data.hoTenA}&gmaila=${data.gmaila}&benb=${data.hoTenB}&email=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
+      );
+      console.log("Hopdong API response:", hopdongResponse.data);
+      if (hopdongResponse.data === 1) {
+        ToastProvider("success", "Hợp đồng đã được thêm thành công.");
+      }
+      setTimeout(() => {
+        navigate("/danhsachhopdong");
+      }, 2000);
+    } catch (error) {
+      console.error("Error adding contract:", error);
+      alert("Đã xảy ra lỗi khi thêm hợp đồng.");
     }
-    setTimeout(() => {
-      navigate("/danhsachhopdong");
-    }, 2000);
   };
 
   return (
@@ -106,7 +190,7 @@ const ThemHopDong = () => {
             <div>
               <div>
                 <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
-                  Tên hợp đồng:
+                  Mã hợp đồng:
                 </label>
                 <input
                   type="text"
@@ -116,20 +200,27 @@ const ThemHopDong = () => {
                   value={contract.name}
                   onChange={handleInputChange}
                 />
+                {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
               </div>
               <div className="mt-4">
                 <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
                   Mã hợp đồng:
                 </label>
-                <input
-                  className="ms-2"
-                  type="text"
-                  name="id"
-                  style={{ width: "230px" }}
-                  value={contract.id}
-                  onChange={handleInputChange}
-                />
+                {isContractIdVisible && (
+                  <input
+                    className="ms-2"
+                    type="text"
+                    name="id"
+                    style={{ width: "230px" }}
+                    value={contract.id}
+                    onChange={handleInputChange}
+                  />
+                )}
+                {isContractIdVisible && errors.id && (
+                  <div style={{ color: "red" }}>{errors.id}</div>
+                )}
               </div>
+
             </div>
             <div className="ms-3">
               <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
@@ -145,6 +236,7 @@ const ThemHopDong = () => {
                 onChange={handleChange}
                 placeholder="Nội dung hợp đồng"
               />
+              {errors.message && <div style={{ color: "red" }}>{errors.message}</div>}
             </div>
             <div>
               <div className="row">
@@ -162,6 +254,7 @@ const ThemHopDong = () => {
                       value={contract.partyA.name}
                       onChange={handleInputChange}
                     />
+                    {errors.partyAName && <div style={{ color: "red" }}>{errors.partyAName}</div>}
                   </div>
                   <div className="mt-4">
                     <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
@@ -174,6 +267,7 @@ const ThemHopDong = () => {
                       value={contract.partyA.email}
                       onChange={handleInputChange}
                     />
+                    {errors.partyAEmail && <div style={{ color: "red" }}>{errors.partyAEmail}</div>}
                   </div>
                 </div>
                 <div className="col-6">
@@ -190,6 +284,7 @@ const ThemHopDong = () => {
                       value={contract.partyB.name}
                       onChange={handleInputChange}
                     />
+                    {errors.partyBName && <div style={{ color: "red" }}>{errors.partyBName}</div>}
                   </div>
                   <div className="mt-4 ms-5">
                     <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
@@ -202,6 +297,7 @@ const ThemHopDong = () => {
                       value={contract.partyB.email}
                       onChange={handleInputChange}
                     />
+                    {errors.partyBEmail && <div style={{ color: "red" }}>{errors.partyBEmail}</div>}
                   </div>
                 </div>
               </div>

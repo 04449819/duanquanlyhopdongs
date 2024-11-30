@@ -45,7 +45,19 @@ namespace API.Controllers
             return Ok(hopDong);
         }
 
-		[HttpGet("haha")]
+        [HttpGet("check-id")]
+        public async Task<IActionResult> CheckHopDongId(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                return BadRequest("Mã hợp đồng không hợp lệ.");
+            }
+
+            var exists = await _hopDongServices.ExistsByIdAsync(id);
+            return Ok(new { exists });
+        }
+
+        [HttpGet("haha")]
 		public async Task<IActionResult> GetHopDongById1(int id1)
 		{
 			var hopDong = await db.HopdongLichsus.FindAsync(id1);

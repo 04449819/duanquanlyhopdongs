@@ -2661,19 +2661,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\This PC\\.nuget\\packages\\": {}
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\API.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\dbhas\\duanquanlyhopdongs\\duanhopdong-master\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\API.csproj",
-      "packagesPath": "C:\\Users\\This PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\obj\\",
+      "projectPath": "C:\\Users\\ASUS\\Desktop\\dbhas\\duanquanlyhopdongs\\duanhopdong-master\\API\\API.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ASUS\\Desktop\\dbhas\\duanquanlyhopdongs\\duanhopdong-master\\API\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\This PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2688,8 +2695,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\DBcontext.csproj": {
-              "projectPath": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\DBcontext.csproj"
+            "C:\\Users\\ASUS\\Desktop\\dbhas\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\Desktop\\dbhas\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj"
             }
           }
         }
@@ -2698,11 +2705,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -2741,7 +2743,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

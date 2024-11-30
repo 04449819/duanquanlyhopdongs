@@ -11,7 +11,7 @@ namespace API.Iserviecs
         Task UpdateAsync(int id, Hopdong product);                 // Cập nhật hợp đồng
         Task DeleteAsync(int id);                          // xoá hợp đồng
 
-
+        Task<bool> ExistsByIdAsync(string id);
 
     }
 }
