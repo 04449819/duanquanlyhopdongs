@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Desktop\\dmcwdfjyhg\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj": {}
+    "C:\\Users\\Administrator\\Desktop\\dcm\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Desktop\\dmcwdfjyhg\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj": {
+    "C:\\Users\\Administrator\\Desktop\\dcm\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\dmcwdfjyhg\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\Desktop\\dcm\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj",
         "projectName": "DBcontext",
-        "projectPath": "C:\\Users\\Administrator\\Desktop\\dmcwdfjyhg\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj",
+        "projectPath": "C:\\Users\\Administrator\\Desktop\\dcm\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Desktop\\dmcwdfjyhg\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\Desktop\\dcm\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

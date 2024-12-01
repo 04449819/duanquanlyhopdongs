@@ -15,8 +15,6 @@ const ThemHopDong = () => {
   const navigate = useNavigate();
   const currentDate = new Date();
   const [isContractIdVisible, setIsContractIdVisible] = useState(false);
-
-
   const [contract, setContract] = useState({
     name: "",
     id: "",
@@ -25,7 +23,6 @@ const ThemHopDong = () => {
     partyA: { name: "", email: "" },
     partyB: { name: "", email: "" },
   });
-
   const [errors, setErrors] = useState({
     name: "",
     id: "",
@@ -52,7 +49,6 @@ const ThemHopDong = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     const [field, subField] = name.split(".");
-    console.log("Input Changed:", name, value);
     if (subField) {
       setContract((prevContract) => ({
         ...prevContract,
@@ -65,7 +61,6 @@ const ThemHopDong = () => {
       }));
     }
   };
-  
 
   const handleBack = () => {
     navigate("/danhsachhopdong");
@@ -84,11 +79,6 @@ const ThemHopDong = () => {
       return false;  // Nếu có lỗi trong việc gọi API, coi như mã hợp đồng chưa tồn tại
     }
   };
-  
-  
-  
-  
-
   const validateForm = () => {
     let valid = true;
     const newErrors = {};
@@ -123,12 +113,8 @@ const ThemHopDong = () => {
     return valid;
   };
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Kiểm tra nếu mã hợp đồng đã tồn tại
     const idExists = await checkContractNameExists(contract.name);
     if (idExists) {
       setErrors((prevErrors) => ({
@@ -137,17 +123,11 @@ const ThemHopDong = () => {
       }));
       return; 
     }
-  
-    if (!validateForm()) {
-      console.log("Xác thực biểu mẫu thất bại");
-      return;  
-    }
-  
+
     if (!publicKey) {
-      console.warn("Khóa công khai đang thiếu. Vui lòng kết nối ví của bạn.");
+      console.warn("Public key is missing. Please connect your wallet.");
       return;
     }
-  
     const data = {
       hopdongid: contract?.name,
       id: contract?.id,
@@ -159,47 +139,21 @@ const ThemHopDong = () => {
       gmailb: contract?.partyB?.email,
       hoTenB: contract?.partyB?.name,
     };
-  
-    console.log("Dữ liệu sẽ gửi:", data);
-  
-    try {
-      const hopdongResponse = await axios.post(
-        `https://localhost:7233/api/Mail/send-student-confirmation1?id=1&hopdongid=${data.hopdongid}&noidung=${data.noidung}&bena=${data.hoTenA}&gmaila=${data.gmaila}&benb=${data.hoTenB}&email=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
-      );
-      console.log("Phản hồi API hợp đồng:", hopdongResponse.data);
-      
-      if (hopdongResponse.data === 1) {
-        ToastProvider("success", "Hợp đồng đã được thêm thành công.");
-      }
-  
-      setTimeout(() => {
-        navigate("/danhsachhopdong");
-      }, 2000);
-    } catch (error) {
-      console.error("Lỗi khi thêm hợp đồng qua email:", error);
-      alert("Đã xảy ra lỗi khi thêm hợp đồng.");
+    console.log(data.noidung);
+    console.log(
+      `https://localhost:7233/api/Mail/send-student-confirmation1?id=1&hopdongid=${data.hopdongid}&noidung=${data.noidung}&bena=${data.hoTenA}&gmaila=${data.gmaila}&benb=${data.hoTenA}&email=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
+    );
+    const hopdongResponse = await axios.post(
+      `https://localhost:7233/api/Mail/send-student-confirmation1?id=1&hopdongid=${data.hopdongid}&noidung=${data.noidung}&bena=${data.hoTenA}&gmaila=${data.gmaila}&benb=${data.hoTenB}&email=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
+    );
+    console.log("Hopdong API response:", hopdongResponse.data);
+    if (hopdongResponse.data === 1) {
+      ToastProvider("success", "Contract add successfully.");
     }
-  
-    try {
-      const addHopDongResponse = await axios.post(
-        `https://localhost:7233/api/Hopdong/addhopdong?response=1&noi_dung=${data.noidung}&Hopdongid=${data.hopdongid}&bena=${data.hoTenA}&gmaila=${data.gmaila}&tenb=${data.hoTenB}&gmailb=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
-      );
-  
-      console.log("Phản hồi từ Add Hop Dong:", addHopDongResponse.data);
-  
-      if (addHopDongResponse.status === 200) {
-        ToastProvider("success", "Hợp đồng đã được thêm vào cơ sở dữ liệu.");
-      } else {
-        alert("Đã xảy ra lỗi khi thêm hợp đồng vào cơ sở dữ liệu.");
-      }
-    } catch (error) {
-      console.error("Lỗi khi thêm hợp đồng vào cơ sở dữ liệu:", error);
-      alert("Đã xảy ra lỗi khi thêm hợp đồng vào cơ sở dữ liệu.");
-    }
+    setTimeout(() => {
+      navigate("/danhsachhopdong");
+    }, 2000);
   };
-  
-  
-  
 
   return (
     <div className="container">
@@ -227,7 +181,7 @@ const ThemHopDong = () => {
                   value={contract.name}
                   onChange={handleInputChange}
                 />
-                {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
+                  {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
               </div>
               <div className="mt-4">
                 
@@ -245,7 +199,6 @@ const ThemHopDong = () => {
                   <div style={{ color: "red" }}>{errors.id}</div>
                 )}
               </div>
-
             </div>
             <div className="ms-3">
               <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
@@ -261,7 +214,6 @@ const ThemHopDong = () => {
                 onChange={handleChange}
                 placeholder="Nội dung hợp đồng"
               />
-              {errors.message && <div style={{ color: "red" }}>{errors.message}</div>}
             </div>
             <div>
               <div className="row">
@@ -279,7 +231,7 @@ const ThemHopDong = () => {
                       value={contract.partyA.name}
                       onChange={handleInputChange}
                     />
-                    {errors.partyAName && <div style={{ color: "red" }}>{errors.partyAName}</div>}
+                     {errors.partyAName && <div style={{ color: "red" }}>{errors.partyAName}</div>}
                   </div>
                   <div className="mt-4">
                     <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
@@ -292,7 +244,7 @@ const ThemHopDong = () => {
                       value={contract.partyA.email}
                       onChange={handleInputChange}
                     />
-                    {errors.partyAEmail && <div style={{ color: "red" }}>{errors.partyAEmail}</div>}
+                     {errors.partyAEmail && <div style={{ color: "red" }}>{errors.partyAEmail}</div>}
                   </div>
                 </div>
                 <div className="col-6">
@@ -309,7 +261,7 @@ const ThemHopDong = () => {
                       value={contract.partyB.name}
                       onChange={handleInputChange}
                     />
-                    {errors.partyBName && <div style={{ color: "red" }}>{errors.partyBName}</div>}
+                      {errors.partyBName && <div style={{ color: "red" }}>{errors.partyBName}</div>}
                   </div>
                   <div className="mt-4 ms-5">
                     <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
@@ -322,7 +274,7 @@ const ThemHopDong = () => {
                       value={contract.partyB.email}
                       onChange={handleInputChange}
                     />
-                    {errors.partyBEmail && <div style={{ color: "red" }}>{errors.partyBEmail}</div>}
+                     {errors.partyBEmail && <div style={{ color: "red" }}>{errors.partyBEmail}</div>}
                   </div>
                 </div>
               </div>

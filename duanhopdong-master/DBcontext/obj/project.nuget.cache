@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7/aRvy1a4i0=",
+  "dgSpecHash": "cGtW2qkxxz0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\dmcwdfjyhg\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\dcm\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\DBcontext.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

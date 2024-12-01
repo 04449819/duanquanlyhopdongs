@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KDFipJ3u4Ck=",
+  "dgSpecHash": "T/b0w5KYOus=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\dmcwdfjyhg\\duanquanlyhopdongs\\duanhopdong-master\\API\\API.csproj",
+  "projectFilePath": "C:\\Users\\Administrator\\Desktop\\dcm\\duanquanlyhopdongs\\duanhopdong-master\\API\\API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\bouncycastle.cryptography\\2.4.0\\bouncycastle.cryptography.2.4.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\mailkit\\4.8.0\\mailkit.4.8.0.nupkg.sha512",
