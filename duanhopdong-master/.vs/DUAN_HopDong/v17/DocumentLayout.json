@@ -1,53 +1,57 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\api\\services\\mailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\services\\mailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\api\\controllers\\mailcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\controllers\\mailcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\api\\controllers\\hopdongcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\api\\controllers\\hopdongcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\controllers\\hopdongcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\dbcontext\\viewmodel\\maildata1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|solutionrelative:dbcontext\\viewmodel\\maildata1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\api\\iserviecs\\imailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\iserviecs\\imailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\dbcontext\\models\\hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|solutionrelative:dbcontext\\models\\hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\dbcontext\\viewmodel\\maildata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|solutionrelative:dbcontext\\viewmodel\\maildata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\api\\services\\hopdongservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\api\\services\\hopdongservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\services\\hopdongservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\dbcontext\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|solutionrelative:dbcontext\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\api\\iserviecs\\imailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\iserviecs\\imailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\api\\iserviecs\\ihopdongservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\iserviecs\\ihopdongservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|c:\\users\\this pc\\desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\dbcontext\\viewmodel\\mailsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\dbcontext\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|solutionrelative:dbcontext\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\api\\services\\mailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\services\\mailservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\api\\controllers\\mailcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\controllers\\mailcontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B784DEF1-75BD-471D-864E-B13A8714C912}|API\\API.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\dbcontext\\viewmodel\\maildata1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|solutionrelative:dbcontext\\viewmodel\\maildata1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\dbcontext\\models\\hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|solutionrelative:dbcontext\\models\\hopdong.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\dbcontext\\viewmodel\\maildata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|solutionrelative:dbcontext\\viewmodel\\maildata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|c:\\users\\administrator\\desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\dbcontext\\viewmodel\\mailsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{00AF0A76-CF4C-430C-BFA2-9E2DF5A6434F}|DBcontext\\DBcontext.csproj|solutionrelative:dbcontext\\viewmodel\\mailsetting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -58,60 +62,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "HopDongController.cs",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Controllers\\HopDongController.cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\HopDongController.cs",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Controllers\\HopDongController.cs",
-              "RelativeToolTip": "API\\Controllers\\HopDongController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAqwEIAAAAEAAAAAAAAAA==",
+              "Title": "IHopDongServices.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Iserviecs\\IHopDongServices.cs",
+              "RelativeDocumentMoniker": "API\\Iserviecs\\IHopDongServices.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Iserviecs\\IHopDongServices.cs",
+              "RelativeToolTip": "API\\Iserviecs\\IHopDongServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T11:58:27.699Z",
+              "WhenOpened": "2024-12-01T11:39:37.869Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\Models\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "DBcontext\\Models\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\Models\\ApplicationDbContext.cs",
-              "RelativeToolTip": "DBcontext\\Models\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T12:11:17.159Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "MailSetting.cs",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\Viewmodel\\MailSetting.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\Viewmodel\\MailSetting.cs",
               "RelativeDocumentMoniker": "DBcontext\\Viewmodel\\MailSetting.cs",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\Viewmodel\\MailSetting.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\Viewmodel\\MailSetting.cs",
               "RelativeToolTip": "DBcontext\\Viewmodel\\MailSetting.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -119,24 +95,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "MailData.cs",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\Viewmodel\\MailData.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\Viewmodel\\MailData.cs",
               "RelativeDocumentMoniker": "DBcontext\\Viewmodel\\MailData.cs",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\Viewmodel\\MailData.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\Viewmodel\\MailData.cs",
               "RelativeToolTip": "DBcontext\\Viewmodel\\MailData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T11:46:35.01Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T11:46:35.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "IMailServices.cs",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Iserviecs\\IMailServices.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Iserviecs\\IMailServices.cs",
               "RelativeDocumentMoniker": "API\\Iserviecs\\IMailServices.cs",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Iserviecs\\IMailServices.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Iserviecs\\IMailServices.cs",
               "RelativeToolTip": "API\\Iserviecs\\IMailServices.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -145,36 +120,75 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\appsettings.json",
               "RelativeDocumentMoniker": "API\\appsettings.json",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\appsettings.json",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\appsettings.json",
               "RelativeToolTip": "API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-25T11:43:37.667Z"
+              "WhenOpened": "2024-11-25T11:43:37.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MailController .cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Controllers\\MailController .cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\MailController .cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Controllers\\MailController .cs",
+              "RelativeToolTip": "API\\Controllers\\MailController .cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAgwIIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T11:43:28.313Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MailController .cs",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Controllers\\MailController .cs",
-              "RelativeDocumentMoniker": "API\\Controllers\\MailController .cs",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Controllers\\MailController .cs",
-              "RelativeToolTip": "API\\Controllers\\MailController .cs",
-              "ViewState": "AgIAAFkAAAAAAAAAAAAgwIIAAAAbAAAAAAAAAA==",
+              "Title": "HopdongServices.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Services\\HopdongServices.cs",
+              "RelativeDocumentMoniker": "API\\Services\\HopdongServices.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Services\\HopdongServices.cs",
+              "RelativeToolTip": "API\\Services\\HopdongServices.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAhwCQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T11:43:28.313Z",
+              "WhenOpened": "2024-11-27T12:38:52.594Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "HopDongController.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Controllers\\HopDongController.cs",
+              "RelativeDocumentMoniker": "API\\Controllers\\HopDongController.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Controllers\\HopDongController.cs",
+              "RelativeToolTip": "API\\Controllers\\HopDongController.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAqwD8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T11:58:27.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "DBcontext\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "DBcontext\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T12:11:17.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "MailServices.cs",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Services\\MailServices.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Services\\MailServices.cs",
               "RelativeDocumentMoniker": "API\\Services\\MailServices.cs",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Services\\MailServices.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Services\\MailServices.cs",
               "RelativeToolTip": "API\\Services\\MailServices.cs",
               "ViewState": "AgIAADQAAAAAAAAAAAAmwE0AAABzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -183,55 +197,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Program.cs",
               "RelativeDocumentMoniker": "API\\Program.cs",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Program.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\API\\Program.cs",
               "RelativeToolTip": "API\\Program.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAewDcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T11:42:56.062Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-25T11:42:56.062Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "MailData1.cs",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\Viewmodel\\MailData1.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\Viewmodel\\MailData1.cs",
               "RelativeDocumentMoniker": "DBcontext\\Viewmodel\\MailData1.cs",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\Viewmodel\\MailData1.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\Viewmodel\\MailData1.cs",
               "RelativeToolTip": "DBcontext\\Viewmodel\\MailData1.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAqwBQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T14:04:40.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-29T14:04:40.766Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Hopdong.cs",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\Models\\Hopdong.cs",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\Models\\Hopdong.cs",
               "RelativeDocumentMoniker": "DBcontext\\Models\\Hopdong.cs",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\DBcontext\\Models\\Hopdong.cs",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\c\u0169\\duanquanlyhopdongs\\duanhopdong-master\\DBcontext\\Models\\Hopdong.cs",
               "RelativeToolTip": "DBcontext\\Models\\Hopdong.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-29T14:05:31.508Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "HopdongServices.cs",
-              "DocumentMoniker": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Services\\HopdongServices.cs",
-              "RelativeDocumentMoniker": "API\\Services\\HopdongServices.cs",
-              "ToolTip": "C:\\Users\\This PC\\Desktop\\duanqlhopdong\\duanqlhdong\\duanhopdong-master\\API\\Services\\HopdongServices.cs",
-              "RelativeToolTip": "API\\Services\\HopdongServices.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAIA5wDUAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-27T12:38:52.594Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-29T14:05:31.508Z"
             }
           ]
         }

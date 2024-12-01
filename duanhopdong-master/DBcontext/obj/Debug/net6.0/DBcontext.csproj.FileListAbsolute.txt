@@ -69,3 +69,18 @@ C:\Users\This PC\Desktop\duanqlhopdong\duanqlhdong\duanhopdong-master\DBcontext\
 C:\Users\This PC\Desktop\duanqlhopdong\duanqlhdong\duanhopdong-master\DBcontext\obj\Debug\net6.0\DBcontext.pdb
 C:\Users\This PC\Desktop\duanqlhopdong\duanqlhdong\duanhopdong-master\DBcontext\obj\Debug\net6.0\DBcontext.genruntimeconfig.cache
 C:\Users\This PC\Desktop\duanqlhopdong\duanqlhdong\duanhopdong-master\DBcontext\obj\Debug\net6.0\ref\DBcontext.dll
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\bin\Debug\net6.0\DBcontext.deps.json
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\bin\Debug\net6.0\DBcontext.runtimeconfig.json
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\bin\Debug\net6.0\DBcontext.dll
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\bin\Debug\net6.0\DBcontext.pdb
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\obj\Debug\net6.0\DBcontext.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\obj\Debug\net6.0\DBcontext.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\obj\Debug\net6.0\DBcontext.AssemblyInfoInputs.cache
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\obj\Debug\net6.0\DBcontext.AssemblyInfo.cs
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\obj\Debug\net6.0\DBcontext.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\obj\Debug\net6.0\DBcontext.sourcelink.json
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\obj\Debug\net6.0\DBcontext.dll
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\obj\Debug\net6.0\refint\DBcontext.dll
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\obj\Debug\net6.0\DBcontext.pdb
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\obj\Debug\net6.0\DBcontext.genruntimeconfig.cache
+C:\Users\Administrator\Desktop\cũ\duanquanlyhopdongs\duanhopdong-master\DBcontext\obj\Debug\net6.0\ref\DBcontext.dll

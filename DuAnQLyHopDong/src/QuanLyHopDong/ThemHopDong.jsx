@@ -14,6 +14,7 @@ const ThemHopDong = () => {
   const { connected, publicKey, signTransaction } = useWallet();
   const navigate = useNavigate();
   const currentDate = new Date();
+  const [isContractIdVisible, setIsContractIdVisible] = useState(false);
   const [contract, setContract] = useState({
     name: "",
     id: "",
@@ -21,6 +22,15 @@ const ThemHopDong = () => {
     message: "",
     partyA: { name: "", email: "" },
     partyB: { name: "", email: "" },
+  });
+  const [errors, setErrors] = useState({
+    name: "",
+    id: "",
+    message: "",
+    partyAName: "",
+    partyAEmail: "",
+    partyBName: "",
+    partyBEmail: "",
   });
 
   useEffect(() => {
@@ -39,6 +49,7 @@ const ThemHopDong = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     const [field, subField] = name.split(".");
+    console.log("Input Changed:", name, value);
     if (subField) {
       setContract((prevContract) => ({
         ...prevContract,
@@ -55,10 +66,71 @@ const ThemHopDong = () => {
   const handleBack = () => {
     navigate("/danhsachhopdong");
   };
+  const checkContractNameExists = async (contractName) => {
+    try {
+      // Gọi API để kiểm tra mã hợp đồng
+      const response = await axios.get(`https://localhost:7233/api/Hopdong/check-id?id=${contractName}`);
+
+      console.log("API response for contract name check:", response.data);  // Kiểm tra phản hồi từ API
+
+      // Kiểm tra nếu API trả về exists: true thì có nghĩa là mã hợp đồng đã tồn tại
+      return response.data.exists;  // Nếu exists: true, trả về true (mã hợp đồng đã tồn tại), ngược lại trả về false
+    } catch (error) {
+      console.error("Lỗi khi kiểm tra mã hợp đồng:", error);
+      return false;  // Nếu có lỗi trong việc gọi API, coi như mã hợp đồng chưa tồn tại
+    }
+  };
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = {};
+    if (!contract.message) {
+      newErrors.message = "Nội dung hợp đồng là bắt buộc.";
+      valid = false;
+    }
+    if (!contract.partyA.name) {
+      newErrors.partyAName = "Tên bên A là bắt buộc.";
+      valid = false;
+    }
+    if (!contract.partyA.email) {
+      newErrors.partyAEmail = "Email bên A là bắt buộc.";
+      valid = false;
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(contract.partyA.email)) {
+      newErrors.partyAEmail = "Email bên A không hợp lệ.";
+      valid = false;
+    }
+    if (!contract.partyB.name) {
+      newErrors.partyBName = "Tên bên B là bắt buộc.";
+      valid = false;
+    }
+    if (!contract.partyB.email) {
+      newErrors.partyBEmail = "Email bên B là bắt buộc.";
+      valid = false;
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(contract.partyB.email)) {
+      newErrors.partyBEmail = "Email bên B không hợp lệ.";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const idExists = await checkContractNameExists(contract.name);
+    if (idExists) {
+      setErrors((prevErrors) => ({
+        ...prevErrors,
+        name: "Mã hợp đồng đã tồn tại trong cơ sở dữ liệu."
+      }));
+      return;
+    }
+
+    if (!validateForm()) {
+      console.log("Xác thực biểu mẫu thất bại");
+      return;
+    }
     if (!publicKey) {
       console.warn("Public key is missing. Please connect your wallet.");
       return;
@@ -106,7 +178,7 @@ const ThemHopDong = () => {
             <div>
               <div>
                 <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
-                  Tên hợp đồng:
+                  Mã hợp đồng:
                 </label>
                 <input
                   type="text"
@@ -115,20 +187,25 @@ const ThemHopDong = () => {
                   style={{ width: "230px" }}
                   value={contract.name}
                   onChange={handleInputChange}
+                // {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
                 />
+                {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
               </div>
               <div className="mt-4">
-                <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
-                  Mã hợp đồng:
-                </label>
-                <input
-                  className="ms-2"
-                  type="text"
-                  name="id"
-                  style={{ width: "230px" }}
-                  value={contract.id}
-                  onChange={handleInputChange}
-                />
+
+                {isContractIdVisible && (
+                  <input
+                    className="ms-2"
+                    type="text"
+                    name="id"
+                    style={{ width: "230px" }}
+                    value={contract.id}
+                    onChange={handleInputChange}
+                  />
+                )}
+                {isContractIdVisible && errors.id && (
+                  <div style={{ color: "red" }}>{errors.id}</div>
+                )}
               </div>
             </div>
             <div className="ms-3">
@@ -145,6 +222,7 @@ const ThemHopDong = () => {
                 onChange={handleChange}
                 placeholder="Nội dung hợp đồng"
               />
+             {errors.message && <div style={{ color: "red" }}>{errors.message}</div>}
             </div>
             <div>
               <div className="row">
@@ -162,6 +240,7 @@ const ThemHopDong = () => {
                       value={contract.partyA.name}
                       onChange={handleInputChange}
                     />
+                     {errors.partyAName && <div style={{ color: "red" }}>{errors.partyAName}</div>}
                   </div>
                   <div className="mt-4">
                     <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
@@ -174,6 +253,7 @@ const ThemHopDong = () => {
                       value={contract.partyA.email}
                       onChange={handleInputChange}
                     />
+                       {errors.partyAEmail && <div style={{ color: "red" }}>{errors.partyAEmail}</div>}
                   </div>
                 </div>
                 <div className="col-6">
@@ -190,6 +270,7 @@ const ThemHopDong = () => {
                       value={contract.partyB.name}
                       onChange={handleInputChange}
                     />
+                      {errors.partyBName && <div style={{ color: "red" }}>{errors.partyBName}</div>}
                   </div>
                   <div className="mt-4 ms-5">
                     <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
@@ -202,6 +283,7 @@ const ThemHopDong = () => {
                       value={contract.partyB.email}
                       onChange={handleInputChange}
                     />
+                    {errors.partyBEmail && <div style={{ color: "red" }}>{errors.partyBEmail}</div>}
                   </div>
                 </div>
               </div>

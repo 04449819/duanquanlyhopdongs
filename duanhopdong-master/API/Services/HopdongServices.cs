@@ -31,6 +31,10 @@ namespace API.Services
             await _context.Hopdongs.AddAsync(hopDong);
             await _context.SaveChangesAsync();
         }
+        public async Task<bool> ExistsByIdAsync(string id)
+        {
+            return await _context.Hopdongs.AnyAsync(h => h.Hopdongid == id);
+        }
 
         // Xóa hợp đồng theo ID
         public async Task DeleteAsync(int id)

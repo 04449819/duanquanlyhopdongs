@@ -55,9 +55,19 @@ namespace API.Controllers
 			}
 			return Ok(hopDong);
 		}
+        [HttpGet("check-id")]
+        public async Task<IActionResult> CheckHopDongId(string id)
+        {
+            if (string.IsNullOrWhiteSpace(id))
+            {
+                return BadRequest("Mã hợp đồng không hợp lệ.");
+            }
 
-		// API để thêm hợp đồng mới
-		[HttpGet("addhopdong")]
+            var exists = await _hopDongServices.ExistsByIdAsync(id);
+            return Ok(new { exists });
+        }
+        // API để thêm hợp đồng mới
+        [HttpGet("addhopdong")]
 		public async Task<IActionResult> HandleResponse1(int response, string noi_dung,string Hopdongid ,string bena,string gmaila,string tenb,string gmailb, DateTime ngaythaydoi)
 		{
 			try

@@ -9,7 +9,9 @@ namespace API.Iserviecs
         Task<Hopdong> GetByIdAsync(int id);                // Lấy hợp đồng Id
         Task AddAsync(Viewmodel product);                    // Thêm mới thêm hợp đồng
         Task UpdateAsync(int id, Hopdong product);                 // Cập nhật hợp đồng
-        Task DeleteAsync(int id);                          // xoá hợp đồng
+        Task DeleteAsync(int id);
+        Task<bool> ExistsByIdAsync(string id);
+        // xoá hợp đồng
 
 
 

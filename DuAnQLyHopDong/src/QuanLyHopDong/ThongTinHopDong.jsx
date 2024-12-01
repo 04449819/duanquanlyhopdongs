@@ -45,6 +45,10 @@ const ThongTinHopDong = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!text.trim()) {
+      ToastProvider("error", "Nội dung hợp đồng không được để trống.");
+      return;
+    }
     try {
       const updatedContract = {
         hopdongid: contractName || contract.hopdongid,

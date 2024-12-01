@@ -115,6 +115,22 @@
   },
   {
     "ContainingType": "API.Controllers.HopdongController",
+    "Method": "CheckHopDongId",
+    "RelativePath": "api/Hopdong/check-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Controllers.HopdongController",
     "Method": "GetAlllsHopDongs",
     "RelativePath": "api/Hopdong/getalllsbyid",
     "HttpMethod": "GET",
