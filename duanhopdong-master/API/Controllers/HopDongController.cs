@@ -69,7 +69,7 @@ namespace API.Controllers
 		}
 
 		// API để thêm hợp đồng mới
-		[HttpGet("addhopdong")]
+		[HttpPost("addhopdong")]
 		public async Task<IActionResult> HandleResponse1(int response, string noi_dung,string Hopdongid ,string bena,string gmaila,string tenb,string gmailb, DateTime ngaythaydoi)
 		{
 			try

@@ -52,6 +52,7 @@ const ThemHopDong = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     const [field, subField] = name.split(".");
+    console.log("Input Changed:", name, value);
     if (subField) {
       setContract((prevContract) => ({
         ...prevContract,
@@ -64,29 +65,33 @@ const ThemHopDong = () => {
       }));
     }
   };
+  
 
   const handleBack = () => {
     navigate("/danhsachhopdong");
   };
   const checkContractNameExists = async (contractName) => {
     try {
+      // Gọi API để kiểm tra mã hợp đồng
       const response = await axios.get(`https://localhost:7233/api/Hopdong/check-id?id=${contractName}`);
-      return response.data;  // Return boolean value (true if exists, false otherwise)
+      
+      console.log("API response for contract name check:", response.data);  // Kiểm tra phản hồi từ API
+      
+      // Kiểm tra nếu API trả về exists: true thì có nghĩa là mã hợp đồng đã tồn tại
+      return response.data.exists;  // Nếu exists: true, trả về true (mã hợp đồng đã tồn tại), ngược lại trả về false
     } catch (error) {
-      console.error("Error checking contract name:", error);
-      return false;
+      console.error("Lỗi khi kiểm tra mã hợp đồng:", error);
+      return false;  // Nếu có lỗi trong việc gọi API, coi như mã hợp đồng chưa tồn tại
     }
   };
+  
+  
+  
+  
 
   const validateForm = () => {
     let valid = true;
     const newErrors = {};
-
-    if (!contract.name) {
-      newErrors.name = "Mã hợp đồng là bắt buộc.";
-      valid = false;
-    }
-
     if (!contract.message) {
       newErrors.message = "Nội dung hợp đồng là bắt buộc.";
       valid = false;
@@ -118,28 +123,31 @@ const ThemHopDong = () => {
     return valid;
   };
 
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!validateForm()) {
-      return;
-    }
-    const contractName = contract?.name;  // Use contract name here
-    const idExists = await checkContractNameExists(contractName); // Check for contract name
-
+    
+    // Kiểm tra nếu mã hợp đồng đã tồn tại
+    const idExists = await checkContractNameExists(contract.name);
     if (idExists) {
       setErrors((prevErrors) => ({
         ...prevErrors,
-        id: "Mã hợp đồng đã tồn tại trong cơ sở dữ liệu." // Error message for duplicate name
+        name: "Mã hợp đồng đã tồn tại trong cơ sở dữ liệu."
       }));
-      return;
+      return; 
     }
-
+  
+    if (!validateForm()) {
+      console.log("Xác thực biểu mẫu thất bại");
+      return;  
+    }
+  
     if (!publicKey) {
-      console.warn("Public key is missing. Please connect your wallet.");
+      console.warn("Khóa công khai đang thiếu. Vui lòng kết nối ví của bạn.");
       return;
     }
-
+  
     const data = {
       hopdongid: contract?.name,
       id: contract?.id,
@@ -151,28 +159,47 @@ const ThemHopDong = () => {
       gmailb: contract?.partyB?.email,
       hoTenB: contract?.partyB?.name,
     };
-
-    console.log(data.noidung);
-    console.log(
-      `https://localhost:7233/api/Mail/send-student-confirmation1?id=1&hopdongid=${data.hopdongid}&noidung=${data.noidung}&bena=${data.hoTenA}&gmaila=${data.gmaila}&benb=${data.hoTenA}&email=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
-    );
-
+  
+    console.log("Dữ liệu sẽ gửi:", data);
+  
     try {
       const hopdongResponse = await axios.post(
         `https://localhost:7233/api/Mail/send-student-confirmation1?id=1&hopdongid=${data.hopdongid}&noidung=${data.noidung}&bena=${data.hoTenA}&gmaila=${data.gmaila}&benb=${data.hoTenB}&email=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
       );
-      console.log("Hopdong API response:", hopdongResponse.data);
+      console.log("Phản hồi API hợp đồng:", hopdongResponse.data);
+      
       if (hopdongResponse.data === 1) {
         ToastProvider("success", "Hợp đồng đã được thêm thành công.");
       }
+  
       setTimeout(() => {
         navigate("/danhsachhopdong");
       }, 2000);
     } catch (error) {
-      console.error("Error adding contract:", error);
+      console.error("Lỗi khi thêm hợp đồng qua email:", error);
       alert("Đã xảy ra lỗi khi thêm hợp đồng.");
     }
+  
+    try {
+      const addHopDongResponse = await axios.post(
+        `https://localhost:7233/api/Hopdong/addhopdong?response=1&noi_dung=${data.noidung}&Hopdongid=${data.hopdongid}&bena=${data.hoTenA}&gmaila=${data.gmaila}&tenb=${data.hoTenB}&gmailb=${data.gmailb}&ngaythaydoi=${data.dateCreated}`
+      );
+  
+      console.log("Phản hồi từ Add Hop Dong:", addHopDongResponse.data);
+  
+      if (addHopDongResponse.status === 200) {
+        ToastProvider("success", "Hợp đồng đã được thêm vào cơ sở dữ liệu.");
+      } else {
+        alert("Đã xảy ra lỗi khi thêm hợp đồng vào cơ sở dữ liệu.");
+      }
+    } catch (error) {
+      console.error("Lỗi khi thêm hợp đồng vào cơ sở dữ liệu:", error);
+      alert("Đã xảy ra lỗi khi thêm hợp đồng vào cơ sở dữ liệu.");
+    }
   };
+  
+  
+  
 
   return (
     <div className="container">
@@ -203,9 +230,7 @@ const ThemHopDong = () => {
                 {errors.name && <div style={{ color: "red" }}>{errors.name}</div>}
               </div>
               <div className="mt-4">
-                <label style={{ fontWeight: "bold", paddingRight: "6px" }}>
-                  Mã hợp đồng:
-                </label>
+                
                 {isContractIdVisible && (
                   <input
                     className="ms-2"

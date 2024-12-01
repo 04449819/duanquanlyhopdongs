@@ -23,18 +23,37 @@ const ThongTinHopDong = () => {
 
   const fetchContractByID = async () => {
     try {
-      const response = await axios.get(
-        `https://localhost:7233/api/Hopdong/${hopdong.id}`
-      );
+      const response = await axios.get(`https://localhost:7233/api/Hopdong/${hopdong.id}`);
       const contractData = response.data;
       setContract(contractData);
-      setText(contractData.noidung);
-      setContractName(contractData.hopdongid);
+      setText(contractData.noidung);  // Set text from the contract's content
+      setContractName(contractData.hopdongid);  // Set contract name
     } catch (error) {
       ToastProvider("error", "Error fetching contract: " + error.message);
     }
   };
+  
 
+  const validateForm = () => {
+    let valid = true;
+    const newErrors = {};  
+  
+    // Check if contract content (text) is valid
+    if (!text || text.trim() === "") {
+      newErrors.text = "Nội dung hợp đồng là bắt buộc."; // Error message for empty contract content
+      valid = false;
+    }
+  
+    // Check if contract name is valid
+    if (!contractName || contractName.trim() === "") {
+      newErrors.name = "Tên hợp đồng là bắt buộc."; // Error message for empty contract name
+      valid = false;
+    }
+  
+    return { valid, errors: newErrors };
+  };
+  
+  
   const handleChange = (value) => {
     setText(value);
   };
@@ -42,10 +61,25 @@ const ThongTinHopDong = () => {
   const handleNameChange = (e) => {
     setContractName(e.target.value);
   };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const { valid, errors } = validateForm();
+  if (!valid) {
+    // Display the error messages (can display in the UI)
+    Object.values(errors).forEach((error) => {
+      ToastProvider("error", error);
+    });
+    return;
+  }
+
+  // Debugging: Log the contract data
+  console.log("Contract Name:", contractName);
+  console.log("Contract Content:", text);
+
     try {
+      // Tạo dữ liệu hợp đồng đã cập nhật
       const updatedContract = {
         hopdongid: contractName || contract.hopdongid,
         noidung: text || contract.noidung,
@@ -57,16 +91,34 @@ const ThongTinHopDong = () => {
         gmailb: contract.gmailb,
         id: contract.id,
       };
+
+      // Gửi yêu cầu POST để thông báo qua email
       const response1 = await axios.post(
-        `https://localhost:7233/api/Mail/send-student-confirmation?id=${updatedContract.id}&hopdongid=${updatedContract.hopdongid}&noidung=${updatedContract.noidung}&email=${updatedContract.gmailb}&ngaythaydoi=${updatedContract.ngayThayDoi}` // Gửi yêu cầu PUT với ID hợp đồng
+        `https://localhost:7233/api/Mail/send-student-confirmation?id=${updatedContract.id}&hopdongid=${updatedContract.hopdongid}&noidung=${updatedContract.noidung}&email=${updatedContract.gmailb}&ngaythaydoi=${updatedContract.ngayThayDoi}`
       );
 
-      console.log(response1.data);
+      console.log("Response from email send:", response1.data);
+
+      // Kiểm tra phản hồi từ API gửi email
       if (response1.data === 1) {
         ToastProvider("success", "Contract updated successfully.");
-        setTimeout(() => {
-          navigate("/danhsachhopdong");
-        }, 3000);
+
+        // Tiến hành gửi yêu cầu PUT để cập nhật hợp đồng vào cơ sở dữ liệu
+        const response2 = await axios.put(
+          `https://localhost:7233/api/Hopdong/${updatedContract.id}`, // URL với ID hợp đồng
+          updatedContract // Dữ liệu hợp đồng đã được cập nhật
+        );
+
+        console.log("Response from contract update:", response2.data);
+
+        if (response2.status === 200) {
+          ToastProvider("success", "Contract successfully updated in database.");
+          setTimeout(() => {
+            navigate("/danhsachhopdong"); // Điều hướng về danh sách hợp đồng
+          }, 3000);
+        } else {
+          ToastProvider("error", "Failed to update the contract in the database.");
+        }
       } else {
         ToastProvider("error", "Failed to update the contract.");
       }
@@ -74,6 +126,9 @@ const ThongTinHopDong = () => {
       ToastProvider("error", "Error updating contract: " + error.message);
     }
   };
+  
+  
+
 
   const handleBack = () => {
     navigate("/danhsachhopdong");
